@@ -1,0 +1,792 @@
+// hiba tipusok
+
+Functional
+Workflow failures producing an unexpected or illogical application behavior where the actual result differs from the expected result.
+
+
+Visual
+Visual issues affect the layout and cause user interface distortion such as missing elements or images on a page.
+
+
+Content
+Content issues affect the text of a page, such as spelling, grammar and localization errors.
+
+
+Performance
+Problematic slowness or hanging, sluggish interface. Features take longer to load than they should, slow navigation in the application.
+
+
+Crash
+Application quits or closes unexpectedly while using the features.
+
+
+// pythonos tesztek
+
+##import unittest
+import pytest
+
+from age import categorize_by_age
+
+#class TestCategorizeByAge(unittest.TestCase):
+#    def test_child(self):
+#        self.assertEqual(categorize_by_age(5), "Gyerek")
+#        self.assertEqual(categorize_by_age(7), "Gyerek")
+#        self.assertEqual(categorize_by_age(19), "Felnőtt")
+#        self.assertEqual(categorize_by_age(130), "csal: 130")
+#        self.assertEqual(categorize_by_age(66), "Nyugdíjas")
+#        self.assertEqual(categorize_by_age(91), "DédSzülő")
+#    def test_boundary_child(self):
+#        self.assertEqual(categorize_by_age(18), "Felnőtt")
+#        self.assertEqual(categorize_by_age(130), "csal: 130")
+
+def test_age():
+    assert categorize_by_age(120) == "csal: 120"
+    assert categorize_by_age(66) == "Nyugdíjas"
+    assert categorize_by_age(100) == "DédSzülő"
+    assert categorize_by_age(9) == "Gyerek"
+
+// eredeti program
+def categorize_by_age(age):
+    if age >= 120:
+        return f"csal: {age}"
+    elif age >= 90:
+        return "DédSzülő"
+    elif age >= 65:
+        return "Nyugdíjas"
+    elif age >= 18:
+        return "Felnőtt"
+    else:
+        return "Gyerek"
+
+// számológépes példa
+import pytest
+
+from calculator import sum, div, mul, sub;
+
+def test_sum():
+    assert sum(2,3) == 5
+
+def test_sub():
+    assert sub(2,3) == -1
+
+
+def test_mul():
+    assert mul(2,3) == 6
+
+
+def test_div():
+    assert div(5,0) == "2.5"
+    assert div(5,2) == 2.5
+
+# python -m pytest test_calculator.py
+
+
+
+// másik példa
+import pytest
+from text_processor import TextProcessor
+
+
+def test_capitalize_text_equal():
+    """1. Assert equal - egyenlőség ellenőrzés"""
+    processor = TextProcessor()
+    result = processor.capitalize_text("hello")
+
+    assert result == "HELLO"
+
+
+def test_capitalize_text_not_equal():
+    """2. Assert not equal - nem egyenlő"""
+    processor = TextProcessor()
+    result = processor.capitalize_text("hello")
+
+    assert result != "hello"
+    assert result != "world"
+
+
+
+def test_reverse_text_in():
+    """3. Assert in - benne van"""
+    processor = TextProcessor()
+    result = processor.reverse_text("hello")
+
+    assert "o" in result
+    assert "olleh" in result
+
+
+def test_reverse_text_not_in():
+    """4. Assert not in - nincs benne"""
+    processor = TextProcessor()
+    result = processor.reverse_text("hello")
+
+    assert "hello" not in result
+    assert "x" not in result
+
+
+def test_count_words_isinstance():
+    """5. Assert isinstance - típus ellenőrzés"""
+    processor = TextProcessor()
+    result = processor.count_words("hello world")
+
+    assert isinstance(result, int)
+    assert isinstance(result, (int, float))
+    assert not isinstance(result, str)
+
+
+def test_count_words_greater_less():
+    """6. Assert >, <, >=, <= - összehasonlítás"""
+    processor = TextProcessor()
+    result1 = processor.count_words("hello")
+    result2 = processor.count_words("hello world")
+    result3 = processor.count_words("hello world python")
+
+    assert result1 < result2
+    assert result2 < result3
+    assert result1 < result3
+
+def test_count_words_empty_string():
+    """7. Üres sztring bemenet ellenőrzése"""
+    pass
+
+
+def test_is_palindrome_true_false():
+    """8. Assert True/False - boolean ellenőrzés"""
+    pass
+
+
+def test_remove_spaces_multiple_asserts():
+    """9. Több assert egy tesztben"""
+    pass
+
+// eredeti
+class TextProcessor:
+
+    def __init__(self):
+        self.processed_texts = []
+    
+    def capitalize_text(self, text):
+        """Szöveg nagybetűssé alakítása"""
+        if not text:
+            return ""
+        return text.upper()
+    
+    def reverse_text(self, text):
+        """Szöveg megfordítása"""
+        if not text:
+            return ""
+        return text[::-1]
+    
+    def count_words(self, text):
+        """Szavak számolása"""
+        if not text:
+            return 0
+        return len(text.split())
+    
+    def is_palindrome(self, text):
+        """Palindróma ellenőrzés (pl. "anna" -> True)"""
+        if not text:
+            return False
+        cleaned = text.lower().replace(" ", "")
+        return cleaned == cleaned[::-1]
+
+
+    def remove_spaces(self, text):
+        """Szóközök eltávolítása"""
+        if not text:
+            return ""
+        return text.replace(" ", "")
+
+// számokkal
+class NumberValidator:
+    """Számvalidáló osztály különböző matematikai műveletekhez"""
+    
+    def __init__(self):
+        self.validated_numbers = []
+    
+    def is_even(self, number):
+        """Páros szám ellenőrzés"""
+        if number is None:
+            return False
+        return number % 2 == 0
+    
+    def is_positive(self, number):
+        """Pozitív szám ellenőrzés"""
+        if number is None:
+            return False
+        return number > 0
+    
+    def is_in_range(self, number, min_val, max_val):
+        """Ellenőrzi, hogy a szám a megadott tartományban van-e"""
+        if number is None:
+            return False
+        return min_val <= number <= max_val
+
+
+import pytest
+from number_validator import NumberValidator
+
+
+# ============================================================================
+# FELADAT: Írd meg az alábbi teszteket!
+# ============================================================================
+
+def test_is_even_equal():
+    """1.1 Assert equal - páros szám ellenőrzés"""
+    nValidator = NumberValidator()
+    result = nValidator.is_even(2)
+    assert result == True
+
+
+def test_is_even_not_equal():
+    """1.2 Assert not equal - páratlan szám ellenőrzés"""
+    nValidator = NumberValidator()
+    result = nValidator.is_even(1)
+    assert result != True
+
+
+def test_is_even_with_zero():
+    """1.3 Speciális eset - nulla kezelése"""
+    nValidator = NumberValidator()
+    result = nValidator.is_even(0)
+    assert result == True
+
+
+def test_is_positive_greater_than():
+    """2.1 Assert > - pozitív szám ellenőrzés"""
+    nValidator = NumberValidator()
+    result = nValidator.is_positive(10)
+    assert result >= 0
+
+// feature
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday
+    Given today is Sunday
+    When I ask whether it's Friday yet
+    Then I should be told "Nope"
+
+  Scenario: Friday is Friday
+    Given today is Friday
+    When I ask whether it's Friday yet
+    Then I should be told "TGIF"
+
+  Scenario: Monday is not Friday
+    Given today is Monday
+    When I ask whether it's Friday yet
+    Then I should be told "Nope"
+
+  Scenario Outline: Monday is not Friday
+    Given today is <day>
+    When I ask whether it's Friday yet
+    Then I should be told "<answer>"
+
+  Examples:
+    | day | answer |
+    | Friday | TGIF |
+    | Sunday | Nope |
+    | anything else! | Nope |
+
+// given when then
+from behave import given, when, then
+from src.is_it_friday import is_it_friday
+
+@given('today is {day}')
+def step_given_today_is(context, day):
+    context.today = day
+
+@when("I ask whether it's Friday yet")
+def step_when_i_ask_whether_its_friday_yet(context):
+    context.actual_answer = is_it_friday(context.today)
+
+
+@then('I should be told "{expected_answer}"')
+def step_then_i_should_be_told(context, expected_answer):
+    assert context.actual_answer == expected_answer, \
+        f"Expected '{expected_answer}', but got '{context.actual_answer}'"
+
+// kód
+def is_it_friday(today):
+    """
+    Determines if today is Friday.
+    
+    Args:
+        today (str): The day of the week
+        
+    Returns:
+        str: "TGIF" if today is Friday, "Nope" otherwise
+    """
+    return "TGIF" if today == "Friday" else "Nope"
+
+// struktúra
+Python_BDD_Is_it_Friday/
+├── features/
+│   ├── is_it_friday_yet.feature      # Feature fájl (tesztek Gherkin nyelven)
+│   └── steps/
+│       └── step_definitions.py       # Step definitions (teszt kód)
+├── src/
+│   └── is_it_friday.py               # Production code (alkalmazás kód)
+├── requirements.txt                  # Python függőségek
+└── README.md                         # Ez a fájl
+
+// működés
+1. Feature fájl (features/is_it_friday_yet.feature)
+Ez a fájl tartalmazza a teszteket Gherkin nyelven. A tesztek közérthető nyelven íródnak, így bárki megérti őket.
+
+2. Step Definitions (features/steps/step_definitions.py)
+Ez a fájl tartalmazza a Python kódot, amely valójában végrehajtja a teszteket. A step definitions "összeragasztják" a feature fájlban lévő sorokat a Python kóddal.
+
+3. Production Code (src/is_it_friday.py)
+Ez az alkalmazás kódja, amit tesztelünk. Ez tartalmazza az üzleti logikát.
+
+Fontos: A teszt kód (step_definitions.py) meghívja az alkalmazás kódot (is_it_friday.py), és ellenőrzi, hogy helyesen működik-e!
+
+Példa folyamat
+A behave elolvassa a features/is_it_friday_yet.feature fájlt
+Minden Examples sorhoz külön tesztet futtat
+A step definitions meghívják az is_it_friday() függvényt
+Az eredményeket ellenőrzi és jelentést készít
+
+
+// még egy behave példa
+Feature: Szám kategorizálása
+  Mint felhasználó
+  Szeretném tudni, hogy egy szám pozitív, negatív vagy nulla
+  Hogy döntéseket hozhassak
+
+  Scenario Outline: polaritás tesztelése
+    Given a szám értéke "<szam>"
+    When megkérdezem, hogy pozitív, negatív vagy nulla
+    Then a válasz "<antworten>" kell legyen
+
+  Examples:
+    | szam | antworten |
+    | 0 | Nulla |
+    | 5 | Pozitív |
+    | -3 | Negatív |
+    | 2.1 | Tizedestört |
+    | 101010101010110101010 | Nagy szám |
+
+// step_definitions.py
+"""
+Step definitions for the number category feature.
+"""
+
+from behave import given, when, then
+from src.number_category import categorize_number
+# TODO: Importáld a number_category modult, amikor elkészült
+
+@given ('a szám értéke "{number}"')
+def step_number_value(context, number):
+    if '.' in number:
+        context.szam = float(str(number))
+    else:
+        context.szam = int(str(number))
+# TODO: Írd meg a step definition-öket a feature fájlban lévő scenáriók alapján
+
+@when ('megkérdezem, hogy pozitív, negatív vagy nulla')
+def step_get_polarity(context):
+    context.result = categorize_number(context.szam)
+
+@then ('a válasz "{answer}" kell legyen')
+def step_get_answer(context, answer):
+    assert context.result == answer
+
+// forras kod
+def categorize_number(number):
+    """
+    Kategorizálja a számot pozitív, negatív vagy nulla kategóriába.
+    
+    Args:
+        number (int vagy float): A kategorizálandó szám
+        
+    Returns:
+        str: "Pozitív" ha a szám > 0, "Negatív" ha < 0, "Nulla" ha = 0
+
+
+    TODO: Implementáld ezt a függvényt!
+    Példa:
+        categorize_number(5) -> "Pozitív"
+        categorize_number(-3) -> "Negatív"
+        categorize_number(0) -> "Nulla"
+    """
+    # TODO: Írd meg az implementációt!
+    if (len(str(number)) > 12):
+        return "Nagy szám"
+    elif '.' in str(number):
+        return "Tizedestört"
+    elif (number == 0):
+        return "Nulla"
+    elif (number > 0):
+        return "Pozitív"
+    else:
+        return "Negatív"
+    pass
+
+/// Futtatáshoz kellő kód: python -m behave
+
+
+// number range példa
+
+// src mappa number_range.py
+def is_in_range(number, min_value , max_value):
+    return True if (number >= min_value and number <= max_value) else False
+
+// feature, number_range.feature
+Feature: Szám tartomány ellenőrzése
+    Mint felhasználó
+    Szeretném ellenőrizni, hogy egy szám egy adott tartományban van-e
+    Hogy validációt végezhessek
+
+    Scenario Outline: Szám a tartományon belül
+        Given a szám értéke <szam>
+        And a minimum <min>
+        And a max <max>
+        When ellenőrzöm, hogy a szám a tartományban van-e
+        Then az eredmény <eredmeny> kell legyen
+
+    Examples:
+    | szam | min | max | eredmeny |
+    | 50 | 0 | 100 | True |
+    | -5 | 0 | 100 | False |
+    | 150 | 0 | 100 | False |
+    | 10 | 0 | 100 | True |
+    | 100 | 0 | 100 | True |
+    | 3.5 | 0 | 100 | True |
+    | -75 | -100 | -50 | True |
+
+// feature/steps step_definitions.py
+
+from behave import given, when, then
+from src.number_range import is_in_range
+
+@given("a szám értéke {szam}")
+def step_data_given(context, szam):
+    context.number = float(szam)
+
+@given("a minimum {min}")
+def step_min_given(context, min):
+    context.mini = float(min)
+
+@given("a max {max}")
+def step_max_given(context, max):
+    context.maxi = float(max)
+
+@when("ellenőrzöm, hogy a szám a tartományban van-e")
+def step_when_i_check_if_its_in_range(context):
+    context.answer = is_in_range(context.number, context.mini, context.maxi)
+
+@then('az eredmény {eredmeny} kell legyen')
+def step_then_it_should_be(context, eredmeny):
+    assert str(context.answer) == str(eredmeny), \
+        f"Expected '{eredmeny}', but got '{context.answer}', {context.number} {context.mini} {context.maxi}'"
+
+
+
+
+
+//// robot framework
+*** Settings ***
+Library    Selenium2Library
+Resource    login_keywords.robot
+
+*** Test Cases ***
+Checkout tesztelése
+    Open Browser    https://www.saucedemo.com/    firefox
+    Login with standard user
+    Click Button    //*[@id="add-to-cart-sauce-labs-backpack"]
+    Click Element    //*[@id="shopping_cart_container"]/a
+    Click Element    //*[@id="checkout"]
+    Input Text    //*[@id="first-name"]    test
+    Input Text    //*[@id="last-name"]    test
+    Input Text    //*[@id="postal-code"]    text=
+    Sleep    1s
+    Click Element    //*[@id="continue"]
+    Page Should Contain Element    //*[@id="checkout_info_container"]/div/form/div[1]/div[4]
+    Input Text    //*[@id="first-name"]    text=
+    Input Text    //*[@id="last-name"]    test
+    Input Text    //*[@id="postal-code"]    test
+    Sleep    1s
+    Click Element    //*[@id="continue"]
+    Page Should Contain Element    //*[@id="checkout_info_container"]/div/form/div[1]/div[4]
+    Input Text    //*[@id="first-name"]    test
+    Input Text    //*[@id="last-name"]    text=
+    Input Text    //*[@id="postal-code"]    test
+    Click Element    //*[@id="continue"]
+    Sleep    1s
+    Page Should Contain Element    //*[@id="checkout_info_container"]/div/form/div[1]/div[4]
+    
+    Sleep    1s
+    Click Element    //*[@id="continue"]
+    Click Button    //*[@id="cancel"]
+    Click Element    //*[@id="shopping_cart_container"]/a
+    Click Button    //*[@id="checkout"]
+    
+    Sleep    1s
+    Click Element    //*[@id="continue"]
+    Click Button    //*[@id="cancel"]
+    Click Element    //*[@id="shopping_cart_container"]/a
+    ${cim}=    Get Location
+    Click Button    //*[@id="checkout"]
+    Input Text    //*[@id="first-name"]    text=1234567890
+    Input Text    //*[@id="last-name"]    text=1234567890
+    Input Text    //*[@id="postal-code"]    text=1234567890
+    Sleep    1s
+    Click Element    //*[@id="cancel"]
+    ${cim2}=    Get Location
+    Should Be Equal As Strings    first=${cim}    second=${cim2}
+    Click Element    //*[@id="checkout"]
+    Input Text    //*[@id="first-name"]    text=1234567890
+    Input Text    //*[@id="last-name"]    text=1234567890
+    Input Text    //*[@id="postal-code"]    text=1234567890
+    Sleep    1s
+    Click Element    //*[@id="continue"]
+    Sleep    1s
+    Click Element    //*[@id="finish"]
+    Sleep    1s
+    Click Button    //*[@id="back-to-products"]
+    Sleep    1s
+    Close Browser
+
+Speciális karakterek
+    Open Browser    https://www.saucedemo.com/    firefox
+    Login with standard user
+    Click Button    //*[@id="add-to-cart-sauce-labs-backpack"]
+    Click Element    //*[@id="shopping_cart_container"]/a
+    Click Element    //*[@id="checkout"]
+    Input Text    //*[@id="first-name"]    text=>#{<>#&<>{}đäĐ[]
+    Input Text    //*[@id="last-name"]    text=äđĐ]Đ[Đ][íłł|\Ä~ˇ°~]
+    Input Text    //*[@id="postal-code"]    text=ääđĐ[<#&<>@]
+    ${url}=    Get Location
+    Sleep    1s
+    Click Element    //*[@id="continue"]
+    ${url2}=    Get Location
+    Should Be Equal As Strings    first=${url}    second=${url2}    msg="Elfogadta a hibás (kizárólag speciális karakterekből álló) nevet!"
+    Sleep    2s
+    Close Browser
+
+Túl hosszú név
+    Open Browser    https://www.saucedemo.com/    firefox
+    Login with standard user
+    Click Button    //*[@id="add-to-cart-sauce-labs-backpack"]
+    Click Element    //*[@id="shopping_cart_container"]/a
+    Click Element    //*[@id="checkout"]
+    ${long_name}=    Evaluate    "A" * 100
+    Input Text    //*[@id="first-name"]    text=${long_name}
+    Input Text    //*[@id="last-name"]    text=${long_name}
+    Input Text    //*[@id="postal-code"]    text=${long_name}
+    ${url}=    Get Location
+    Sleep    1s
+    Click Element    //*[@id="continue"]
+    ${url2}=    Get Location
+    Should Be Equal As Strings    first=${url}    second=${url2}    msg="Elfogadta a hibás (túl hosszú) nevet!"
+    Sleep    2s
+    Close Browser
+
+
+// szortirozás
+
+*** Settings ***
+Library    Selenium2Library
+Library    Collections
+Resource    login_keywords.robot
+
+*** Keywords ***
+Get all products
+    ${products}=    Create List
+    @{product_elements}=    Get WebElements    class:inventory_item_name
+    FOR    ${item}    IN    @{product_elements}
+        ${product_name}=    Get Text    ${item}
+        Append To List    ${products}    ${product_name}
+    END
+    RETURN    ${products}
+
+Verify Z-A sorting
+    [Arguments]    ${products}    ${felle}
+    ${length}=    Get Length    ${products}
+    IF    '${felle}' == 'le'
+        FOR    ${i}    IN RANGE    0    ${length} - 1
+        ${current}=    Get From List    ${products}    ${i}
+        ${next}=    Get From List    ${products}    ${i+1}
+        Should Be True    condition='${current}' >= '${next}'    msg=Product not in Z-A order ${current} < ${next}
+        END
+    END
+
+    IF    '${felle}' == 'fel'
+        FOR    ${i}    IN RANGE    0    ${length} - 1
+        ${current}=    Get From List    ${products}    ${i}
+        ${next}=    Get From List    ${products}    ${i+1}
+        Should Be True    condition='${current}' <= '${next}'    msg=Product not in A-Z order ${current} > ${next}
+        END
+    END
+    
+
+Get all prices
+    ${prices}=    Create List
+    @{product_prices}=    Get WebElements    class:inventory_item_price
+    FOR    ${item}    IN    @{product_prices}
+        ${price}=    Get Text    ${item}
+        ${substring}=    Set Variable    ${price}[1:6]
+        Append To List    ${prices}    ${substring}
+    END    
+    RETURN    ${prices}
+
+Verify prices low - high
+    [Arguments]    ${prices}    ${felle}
+    ${length}=    Get Length    ${prices}
+
+    IF    '${felle}' == 'le'
+        FOR    ${i}    IN RANGE    0    ${length} - 1
+        ${current}=    Get From List    ${prices}    ${i}
+        ${next}=    Get From List    ${prices}    ${i+1}
+        Should Be True    condition=${current} <= ${next}    msg=Product not in low - high order, ${current} > ${next}
+        END
+    END
+
+    IF    '${felle}' == 'fel'
+        FOR    ${i}    IN RANGE    0    ${length} - 1
+        ${current}=    Get From List    ${prices}    ${i}
+        ${next}=    Get From List    ${prices}    ${i+1}
+        Should Be True    condition=${current} >= ${next}    msg=Product not in high - low order, ${current} < ${next}
+        END
+    END
+    
+
+
+*** Test Cases ***
+Sort products Z to A
+    Open Browser    https://www.saucedemo.com/    firefox
+    Login with standard user
+    Click Element    class:product_sort_container
+    Click Element    //*[@id="header_container"]/div[2]/div/span/select/option[2]
+    ${products}=    Get all products
+    Verify Z-A sorting    ${products}    felle=le
+    Sleep    2s
+    Close Browser
+
+Sort products A to Z
+    Open Browser    https://www.saucedemo.com/    firefox
+    Login with standard user
+    Click Element    class:product_sort_container
+    Click Element    //*[@id="header_container"]/div[2]/div/span/select/option[1]
+    ${products}=    Get all products
+    Verify Z-A sorting    ${products}    felle=fel
+    Sleep    2s
+    Close Browser
+
+Sort products by price, low - high
+    Open Browser    https://www.saucedemo.com/    firefox
+    Login with standard user
+    Click Element    class:product_sort_container
+    Click Element    //*[@id="header_container"]/div[2]/div/span/select/option[3]
+    ${prices}=    Get all prices
+    Verify prices low - high    ${prices}    felle=le
+    Sleep    2s
+    Close Browser
+
+Sort products by price, high - low
+    Open Browser    https://www.saucedemo.com/    firefox
+    Login with standard user
+    Click Element    class:product_sort_container
+    Click Element    //*[@id="header_container"]/div[2]/div/span/select/option[4]
+    ${prices}=    Get all prices
+    Verify prices low - high    ${prices}    felle=fel
+    Sleep    2s
+    Close Browser
+
+// navigáció
+*** Settings ***
+Library    Selenium2Library
+
+*** Test Cases ***
+Bejelentkezés és hitelesítés
+    Open Browser    url=https://demo.testim.io/?authuser=0    browser=firefox
+    Click Element    //*[@id="app"]/div/header/div/div[2]/ul/li/button
+    Input Text    //*[@id="login"]/div[1]/input    text=John45
+    Input Text    //*[@id="login"]/div[2]/input    text=John123
+    Sleep    1s
+    Click Element    //*[@id="app"]/div/section[3]/div/div[2]/div/nav/button[2]
+    Click Element    //*[@id="app"]/div/header/div/div[2]/ul/div/button/span[1]
+    Click Element    //*[@id="app"]/div/header/div/div[2]/ul/div/ul/li/a
+    Location Should Be    url=https://demo.testim.io/?authuser=0    message=Nem fogadta el a helyes adatokat!
+    
+    Click Element    //*[@id="app"]/div/header/div/div[2]/ul/li/button
+    Input Text    //*[@id="login"]/div[1]/input    text=12314
+    Input Text    //*[@id="login"]/div[2]/input    text=12344
+    Sleep    1s
+    Click Element    //*[@id="app"]/div/section[3]/div/div[2]/div/nav/button[2]
+    Click Element    //*[@id="app"]/div/header/div/div[2]/ul/div/button/span[1]
+    Click Element    //*[@id="app"]/div/header/div/div[2]/ul/div/ul/li/a
+    Location Should Be    url=https://demo.testim.io/?authuser=0    message=Nem fogadta el a helytelen adatokat!
+
+
+    Click Element    //*[@id="app"]/div/header/div/div[2]/ul/li/button
+    Input Text    //*[@id="login"]/div[1]/input    text=
+    Input Text    //*[@id="login"]/div[2]/input    text=
+    Sleep    1s
+    Click Element    //*[@id="app"]/div/section[3]/div/div[2]/div/nav/button[2]
+    Location Should Be    url=https://demo.testim.io/?authuser=0    message=Nem fogadta el az üres adatokat!
+    Close Browser
+
+Navigáció    
+    Open Browser    url=https://demo.testim.io/?authuser=0    browser=firefox
+    Sleep    1s
+    ${db}=    Get Element Count   class:theme__card___2nWQb
+    Should Be Equal As Integers    first=${db}    second=6    msg=Nem 6 elem van a főoldalon!
+    Click Button    //*[@id="app"]/div/section[2]/div[5]/button
+    ${db1}=    Get Element Count   class:theme__card___2nWQb
+    Should Be Equal As Integers    first=${db1}    second=9    msg=Nem 9 elem van a főoldalon!
+    Sleep    1s
+    Close Browser
+
+
+
+
+
+/// manuális tesztelés alapok
+
+Név (Name)
+A teszt neve. Tegye egyértelművé, hogy miről szól a teszt, de ne legyen túl hosszú
+
+Leírás (Description)
+A teszt leírása.
+
+Cél (Objective)
+A teszt célja. Például: Annak ellenőrzése, hogy a bejelentkezési funkció működik-e.
+
+Hiba típusa (Issue Type)
+Milyen hibatípussal találkoztál: crash, content, visual…
+
+Állapot (Status)
+A teszt állapota. Kezdetben csak "tervezet" (draft) legyen.
+
+Előfeltétel (Precondition)
+A teszt előfeltétele. Például: Bejelentkezés az xy rendszerbe, vagy az xy weboldal megnyitása.
+
+Prioritás (Priority)
+A teszt prioritása. Például: Magas (High) prioritás a bejelentkezési funkció esetében.
+
+Súlyosság (Severity)
+A teszt súlyossága.
+
+Környezet (Environment)
+operációs rendszer, böngésző verzió
+
+Felelős (Owner)
+A teszt tulajdonosa, általában a készítő neve.
+
+Becsült idő (Estimated Time):
+Az átlagos idő, ami a teszt elvégzéséhez szükséges. Például: 5 perc.
+
+Teszt szkript lépések (Steps)
+A tesztelő által végrehajtandó lépés.
+
+Test Script Test - Tesztadatok (Test Data)
+Az adatok, amelyeket a teszt során használni kell, ha szükséges.
+
+Test Script Test - Várt eredmény (Expected Result)
+A várt eredmény, amit a tesztelőnek látnia kell. Legyél minél konkrétabb.
+
+Test Script Test - Tényleges eredmény (Actual Result):
+Az eredmény, amit a teszt futtatása során kaptál.
+
