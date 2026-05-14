@@ -1,0 +1,1194 @@
+// containerek
+<div class="container"></div>
+<div class="container-fluid"></div>
+
+// oszlopok
+<div class="row">
+  <div class="col-sm-3">.col-sm-3</div>
+  <div class="col-sm-3">.col-sm-3</div>
+  <div class="col-sm-3">.col-sm-3</div>
+  <div class="col-sm-3">.col-sm-3</div>
+</div>
+
+//szoveg
+<p class="h1">h1 Bootstrap heading</p>
+<p class="h2">h2 Bootstrap heading</p>
+
+.lead	Makes a paragraph stand out	
+.text-start	Indicates left-aligned text	
+.text-break	Prevents long text from breaking layout	
+.text-center	Indicates center-aligned text	
+.text-decoration-none	Removes the underline from a link	
+.text-end	Indicates right-aligned text	
+.text-nowrap	Indicates no wrap text	
+.text-lowercase	Indicates lowercased text	
+.text-uppercase	Indicates uppercased text	
+.text-capitalize	Indicates capitalized text	
+.initialism	Displays the text inside an <abbr> element in a slightly smaller font size	
+.list-unstyled	Removes the default list-style and left margin on list items (works on both <ul> and <ol>). This class only applies to immediate children list items (to remove the default list-style from any nested lists, apply this class to any nested lists as well)	
+.list-inline Places all list items on a single line (used together with .list-inline-item on each <li> elements)
+
+The classes for text colors are: .text-muted, .text-primary, .text-success, .text-info, .text-warning, .text-danger, .text-secondary, .text-white, .text-dark, .text-body (default body color/often black) and .text-light:
+
+The classes for background colors are: .bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger, .bg-secondary, .bg-dark and .bg-light.
+
+
+// table
+
+.table-primary	Blue: Indicates an important action
+.table-success	Green: Indicates a successful or positive action
+.table-danger	Red: Indicates a dangerous or potentially negative action
+.table-info	Light blue: Indicates a neutral informative change or action
+.table-warning	Orange: Indicates a warning that might need attention
+.table-active	Grey: Applies the hover color to the table row or table cell
+.table-secondary	Grey: Indicates a slightly less important action
+.table-light	Light grey table or table row background
+.table-dark	Dark grey table or table row background
+
+The .table-borderless class removes borders from the table:
+The .table-hover class adds a hover effect (grey background color) on table rows:
+Combine .table-dark and .table-striped to create a dark, striped table:
+The .table-dark class adds a black background to the table:
+The .table-hover class adds a hover effect (grey background color) on table rows:
+The .table-bordered class adds borders on all sides of the table and cells:
+The .table-striped class adds zebra-stripes to a table:
+
+// példa
+<div class="container mt-3">
+  <h2>Striped Rows</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+// képek
+The .rounded class adds rounded corners to an image:
+The .rounded-circle class shapes the image to a circle:
+The .img-thumbnail class shapes the image to a thumbnail (bordered):
+<img src="paris.jpg" class="float-start">
+<img src="paris.jpg" class="float-end">
+Center an image by adding the utility classes .mx-auto (margin:auto) and .d-block (display:block) to the image:   <img src="paris.jpg" class="mx-auto d-block">
+<img class="img-fluid" src="ny.jpg" alt="New York">
+
+// alert
+
+<div class="alert alert-success">
+  <strong>Success!</strong> Indicates a successful or positive action.
+</div>
+Alerts are created with the .alert class, followed by one of the contextual classes .alert-success, .alert-info, .alert-warning, .alert-danger, .alert-primary, .alert-secondary, .alert-light or .alert-dark:
+<div class="alert alert-success">
+  <strong>Success!</strong> You should <a href="#" class="alert-link">read this message</a>.
+</div>
+
+<div class="alert alert-success alert-dismissible">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>Success!</strong> This alert box could indicate a successful or positive action.
+</div>
+
+// gombok
+<button type="button" class="btn">Basic</button>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-dark">Dark</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-link">Link</button>
+
+<button type="button" class="btn btn-outline-primary">Primary</button>
+<button type="button" class="btn btn-outline-secondary">Secondary</button>
+<button type="button" class="btn btn-outline-success">Success</button>
+<button type="button" class="btn btn-outline-info">Info</button>
+<button type="button" class="btn btn-outline-warning">Warning</button>
+<button type="button" class="btn btn-outline-danger">Danger</button>
+<button type="button" class="btn btn-outline-dark">Dark</button>
+<button type="button" class="btn btn-outline-light text-dark">Light</button>
+
+<button type="button" class="btn btn-primary btn-lg">Large</button>
+<button type="button" class="btn btn-primary">Default</button>
+<button type="button" class="btn btn-primary btn-sm">Small</button>
+
+// widht 100%-os gomb
+<div class="d-grid">
+  <button type="button" class="btn btn-primary">Full-Width Button</button>
+</div>
+
+<div class="d-grid gap-3">
+  <button type="button" class="btn btn-primary">Full-Width Button</button>
+  <button type="button" class="btn btn-primary">Full-Width Button</button>
+  <button type="button" class="btn btn-primary">Full-Width Button</button>
+</div>
+
+<button type="button" class="btn btn-primary active">Active Primary</button>
+<button type="button" class="btn btn-primary" disabled>Disabled Primary</button>
+<a href="#" class="btn btn-primary disabled">Disabled Link</a>
+
+<button class="btn btn-primary">
+  <span class="spinner-border spinner-border-sm"></span>
+</button>
+
+<button class="btn btn-primary">
+  <span class="spinner-border spinner-border-sm"></span>
+  Loading..
+</button>
+
+<button class="btn btn-primary" disabled>
+  <span class="spinner-border spinner-border-sm"></span>
+  Loading..
+</button>
+
+<button class="btn btn-primary" disabled>
+  <span class="spinner-grow spinner-grow-sm"></span>
+  Loading..
+</button>
+
+// button group
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <button type="button" class="btn btn-primary">Sony</button>
+</div>
+
+<div class="btn-group btn-group-lg">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <button type="button" class="btn btn-primary">Sony</button>
+</div>
+
+<div class="btn-group-vertical">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <button type="button" class="btn btn-primary">Sony</button>
+</div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Sony</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Tablet</a>
+      <a class="dropdown-item" href="#">Smartphone</a>
+    </div>
+  </div>
+</div>
+
+// badge-ek
+<span class="badge bg-primary">Primary</span>
+<span class="badge bg-secondary">Secondary</span>
+<span class="badge bg-success">Success</span>
+<span class="badge bg-danger">Danger</span>
+<span class="badge bg-warning">Warning</span>
+<span class="badge bg-info">Info</span>
+<span class="badge bg-light">Light</span>
+<span class="badge bg-dark">Dark</span>
+
+<span class="badge rounded-pill bg-primary">Primary</span>
+<span class="badge rounded-pill bg-secondary">Secondary</span>
+<span class="badge rounded-pill bg-success">Success</span>
+<span class="badge rounded-pill bg-danger">Danger</span>
+<span class="badge rounded-pill bg-warning">Warning</span>
+<span class="badge rounded-pill bg-info">Info</span>
+<span class="badge rounded-pill bg-light">Light</span>
+<span class="badge rounded-pill bg-dark">Dark</span>
+
+<button type="button" class="btn btn-primary">
+  Messages <span class="badge bg-danger">4</span>
+</button>
+
+// progress bar
+<div class="progress">
+  <div class="progress-bar" style="width:70%"></div>
+</div>
+
+<div class="progress" style="height:20px">
+  <div class="progress-bar" style="width:40%;"></div>
+</div>
+
+<div class="progress">
+  <div class="progress-bar" style="width:70%">70%</div>
+</div>
+
+<div class="progress">
+  <div class="progress-bar bg-info" style="width:30%"></div>
+</div>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped" style="width:40%"></div>
+</div>
+
+<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
+
+<div class="progress">
+  <div class="progress-bar bg-success" style="width:40%">
+    Free Space
+  </div>
+  <div class="progress-bar bg-warning" style="width:10%">
+    Warning
+  </div>
+  <div class="progress-bar bg-danger" style="width:20%">
+    Danger
+  </div>
+</div>
+
+// spinners
+<div class="spinner-border text-muted"></div>
+<div class="spinner-border text-primary"></div>
+<div class="spinner-border text-success"></div>
+
+<div class="spinner-grow text-info"></div>
+<div class="spinner-grow text-warning"></div>
+<div class="spinner-grow text-danger"></div>
+<div class="spinner-grow text-secondary"></div>
+<div class="spinner-grow text-dark"></div>
+<div class="spinner-grow text-light"></div>
+
+<div class="spinner-border spinner-border-sm"></div>
+<div class="spinner-grow spinner-grow-sm"></div>
+
+// pagination (oldal választás)
+<ul class="pagination">
+  <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item active"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+
+<ul class="pagination pagination-sm">
+  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="#">1</a></li>
+  <li class="page-item"><a class="page-link" href="#">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+</ul>
+
+<!-- Default (left-aligned) -->
+<ul class="pagination" style="margin:20px 0">
+  <li class="page-item">...</li>
+</ul>
+
+<!-- Center-aligned -->
+<ul class="pagination justify-content-center" style="margin:20px 0">
+  <li class="page-item">...</li>
+</ul>
+
+<!-- Right-aligned -->
+<ul class="pagination justify-content-end" style="margin:20px 0">
+  <li class="page-item">...</li>
+</ul>
+
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Photos</a></li>
+  <li class="breadcrumb-item"><a href="#">Summer 2017</a></li>
+  <li class="breadcrumb-item"><a href="#">Italy</a></li>
+  <li class="breadcrumb-item active">Rome</li>
+</ul>
+
+// list group
+<ul class="list-group">
+  <li class="list-group-item active">First item</li>
+  <li class="list-group-item">Second item</li>
+  <li class="list-group-item disabled">Third item</li>
+</ul>
+
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action">First item</a>
+  <a href="#" class="list-group-item list-group-item-action">Second item</a>
+  <a href="#" class="list-group-item list-group-item-action">Third item</a>
+</div>
+
+// border nélkül
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">First item</li>
+  <li class="list-group-item">Second item</li>
+  <li class="list-group-item">Third item</li>
+  <li class="list-group-item">Fourth item</li>
+</ul>
+
+// számozott
+<ol class="list-group list-group-numbered">
+  <li class="list-group-item">First item</li>
+  <li class="list-group-item">Second item</li>
+  <li class="list-group-item">Third item</li>
+</ol>
+
+// vízszintes
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item">First item</li>
+  <li class="list-group-item">Second item</li>
+  <li class="list-group-item">Third item</li>
+  <li class="list-group-item">Fourth item</li>
+</ul>
+
+<ul class="list-group">
+  <li class="list-group-item list-group-item-success">Success item</li>
+  <li class="list-group-item list-group-item-secondary">Secondary item</li>
+  <li class="list-group-item list-group-item-info">Info item</li>
+  <li class="list-group-item list-group-item-warning">Warning item</li>
+  <li class="list-group-item list-group-item-danger">Danger item</li>
+  <li class="list-group-item list-group-item-primary">Primary item</li>
+  <li class="list-group-item list-group-item-dark">Dark item</li>
+  <li class="list-group-item list-group-item-light">Light item</li>
+</ul>
+
+// cards
+<div class="card">
+  <div class="card-header">Header</div>
+  <div class="card-body">Content</div>
+  <div class="card-footer">Footer</div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Card title</h4>
+    <p class="card-text">Some example text. Some example text.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+
+<div class="card" style="width:400px">
+  <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">John Doe</h4>
+    <p class="card-text">Some example text.</p>
+    <a href="#" class="btn btn-primary">See Profile</a>
+  </div>
+</div>
+
+<div class="card" style="width:500px">
+  <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+  <div class="card-img-overlay">
+    <h4 class="card-title">John Doe</h4>
+    <p class="card-text">Some example text.</p>
+    <a href="#" class="btn btn-primary">See Profile</a>
+  </div>
+</div>
+
+// dropdown
+<div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Link 1</a></li>
+    <li><a class="dropdown-item" href="#">Link 2</a></li>
+    <li><a class="dropdown-item" href="#">Link 3</a></li>
+  </ul>
+</div>
+
+// dropdown iránya
+You can also create a "dropend" or "dropstart" menu, by adding the .dropend or .dropstart class to the dropdown element. Note that the caret/arrow is added automatically:
+
+Dropright
+<div class="dropdown dropend">
+Dropleft
+<div class="dropdown dropstart">
+<div class="dropup">
+
+<ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="#">Link 1</a></li>
+  <li><a class="dropdown-item" href="#">Link 2</a></li>
+  <li><a class="dropdown-item" href="#">Link 3</a></li>
+  <li><a class="dropdown-item-text" href="#">Text Link</a></li>
+  <li><span class="dropdown-item-text">Just Text</span></li>
+</ul>
+
+// collapsible, összehajtható
+<button data-bs-toggle="collapse" data-bs-target="#demo">Collapsible</button>
+
+<div id="demo" class="collapse">
+Lorem ipsum dolor text....
+</div>
+
+// navigáció
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
+
+<!-- Centered nav -->
+<ul class="nav justify-content-center">
+
+<!-- Right-aligned nav -->
+<ul class="nav justify-content-end">
+
+// függőleges
+<ul class="nav flex-column">
+
+// tabok, pillek
+<ul class="nav nav-pills nav-justified">..</ul>
+<ul class="nav nav-tabs nav-justified">..</ul>
+
+// szöveggel
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane container active" id="home">...</div>
+  <div class="tab-pane container fade" id="menu1">...</div>
+  <div class="tab-pane container fade" id="menu2">...</div>
+</div>
+
+// navbar
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar navbar-expand-sm bg-light">
+
+  <div class="container-fluid">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link 3</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+// függőleges
+<!-- A grey vertical navbar -->
+<nav class="navbar bg-light">
+  ...
+</nav>
+
+// középen
+<nav class="navbar navbar-expand-sm bg-light justify-content-center">
+  ...
+</nav>
+
+// szines
+<!-- Black background with white text -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">...</nav>
+
+<!-- Blue background with white text -->
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">...</nav>
+
+// logo a navbaron
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="logo.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
+    </a>
+  </div>
+</nav>
+
+// szoveg
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <span class="navbar-text">Navbar text</span>
+  </div>
+</nav>
+
+// fent marad
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  ...
+</nav>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+  ...
+</nav>
+
+// popup ablak
+<!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+  Open modal
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Modal body..
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+// animáció hozzá
+<!-- Fading modal -->
+<div class="modal fade"></div>
+
+<!-- Modal without animation -->
+<div class="modal"></div>
+
+// középen modal
+<div class="modal-dialog modal-dialog-centered">
+
+// tooltip
+<button type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="Hooray!">Hover over me!</button>
+
+// engedélyezni kell ezzel
+<script>
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+
+<a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Hooray!">Hover</a>
+<a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hooray!">Hover</a>
+<a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Hooray!">Hover</a>
+<a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Hooray!">Hover</a>
+
+/// fontos
+// border, szám == width
+<span class="border"></span>
+<span class="border border-0"></span>
+<span class="border border-top-0"></span>
+<span class="border border-end-0"></span>
+<span class="border border-bottom-0"></span>
+<span class="border border-start-0"></span>
+<br>
+
+<span class="border-top"></span>
+<span class="border-end"></span>
+<span class="border-bottom"></span>
+<span class="border-start"></span>
+
+<span class="border border-primary"></span>
+<span class="border border-secondary"></span>
+<span class="border border-success"></span>
+<span class="border border-danger"></span>
+<span class="border border-warning"></span>
+<span class="border border-info"></span>
+<span class="border border-light"></span>
+<span class="border border-dark"></span>
+<span class="border border-white"></span>
+
+// border rádiusz
+<span class="rounded"></span>
+<span class="rounded-top"></span>
+<span class="rounded-end"></span>
+<span class="rounded-bottom"></span>
+<span class="rounded-start"></span>
+<span class="rounded-circle"></span>
+<span class="rounded-pill" style="width:130px"></span>
+<span class="rounded-0"></span>
+<span class="rounded-1"></span>
+<span class="rounded-2"></span>
+<span class="rounded-3"></span>
+<span class="rounded-4"></span>
+<span class="rounded-5"></span>
+
+// balra jobbra floatolás
+<div class="clearfix">
+  <span class="float-start">Float left</span>
+  <span class="float-end">Float right</span>
+</div>
+
+<div class="float-sm-end">Float right on small screens or wider</div><br>
+<div class="float-md-end">Float right on medium screens or wider</div><br>
+<div class="float-lg-end">Float right on large screens or wider</div><br>
+<div class="float-xl-end">Float right on extra large screens or wider</div><br>
+<div class="float-xxl-end">Float right on XXL screens or wider</div><br>
+<div class="float-none">Float none</div>
+
+// mx = margin left right == 0
+<div class="mx-auto bg-warning" style="width:150px">Centered</div>
+
+// width
+<div class="w-25 bg-warning">Width 25%</div>
+<div class="w-50 bg-warning">Width 50%</div>
+<div class="w-75 bg-warning">Width 75%</div>
+<div class="w-100 bg-warning">Width 100%</div>
+<div class="w-auto bg-warning">Auto Width</div>
+<div class="mw-100 bg-warning">Max Width 100%</div>
+
+// height
+<div style="height:200px;background-color:#ddd">
+  <div class="h-25 bg-warning">Height 25%</div>
+  <div class="h-50 bg-warning">Height 50%</div>
+  <div class="h-75 bg-warning">Height 75%</div>
+  <div class="h-100 bg-warning">Height 100%</div>
+  <div class="h-auto bg-warning">Auto Height</div>
+  <div class="mh-100 bg-warning" style="height:500px">Max Height 100%</div>
+</div>
+
+// margin - padding
+Bootstrap 5 has a wide range of responsive margin and padding utility classes. They work for all breakpoints: xs (<=576px), sm (>=576px), md (>=768px), lg (>=992px), xl (>=1200px) or xxl (>=1400px)):
+
+The classes are used in the format: {property}{sides}-{size} for xs and {property}{sides}-{breakpoint}-{size} for sm, md, lg, xl and xxl.
+
+Where property is one of:
+
+m - sets margin
+p - sets padding
+Where sides is one of:
+
+t - sets margin-top or padding-top
+b - sets margin-bottom or padding-bottom
+s - sets margin-left or padding-left
+e - sets margin-right or padding-right
+x - sets both padding-left and padding-right or margin-left and margin-right
+y - sets both padding-top and padding-bottom or margin-top and margin-bottom
+blank - sets a margin or padding on all 4 sides of the element
+Where size is one of:
+
+0 - sets margin or padding to 0
+1 - sets margin or padding to .25rem
+2 - sets margin or padding to .5rem
+3 - sets margin or padding to 1rem
+4 - sets margin or padding to 1.5rem
+5 - sets margin or padding to 3rem
+auto - sets margin to auto
+
+// példa
+<div class="pt-4 bg-warning">I only have a top padding (1.5rem)</div>
+<div class="p-5 bg-success">I have a padding on all sides (3rem)</div>
+<div class="m-5 pb-5 bg-info">I have a margin on all sides (3rem) and a bottom padding (3rem)</div>
+
+// árnyék
+<div class="shadow-none p-4 mb-4 bg-light">No shadow</div>
+<div class="shadow-sm p-4 mb-4 bg-white">Small shadow</div>
+<div class="shadow p-4 mb-4 bg-white">Default shadow</div>
+<div class="shadow-lg p-4 mb-4 bg-white">Large shadow</div>
+
+// szöveg föl le elhelyezés
+<span class="align-baseline">baseline</span>
+<span class="align-top">top</span>
+<span class="align-middle">middle</span>
+<span class="align-bottom">bottom</span>
+<span class="align-text-top">text-top</span>
+<span class="align-text-bottom">text-bottom</span>
+
+// lathatosag
+<div class="visible">I am visible</div>
+<div class="invisible">I am invisible</div>
+
+// bezaras ikon
+<button type="button" class="btn-close"></button>
+
+// imsét szinek
+The classes for text colors are: .text-muted, .text-primary, .text-success, .text-info, .text-warning, .text-danger, .text-secondary, .text-white, .text-dark, .text-body (default body color/often black) and .text-light:
+
+// flex
+<div class="d-flex p-3 bg-secondary text-white">
+  <div class="p-2 bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 bg-primary">Flex item 3</div>
+</div>
+
+// középen vannak a cuccok, illeszkedik a mérethez
+<div class="d-inline-flex p-3 bg-secondary text-white">
+  <div class="p-2 bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 bg-primary">Flex item 3</div>
+</div>
+
+// sorba
+<div class="d-flex flex-row bg-secondary">
+  <div class="p-2 bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 bg-primary">Flex item 3</div>
+</div>
+
+// sorba vissza
+<div class="d-flex flex-row-reverse bg-secondary">
+  <div class="p-2 bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 bg-primary">Flex item 3</div>
+</div>
+
+// oszlopba
+<div class="d-flex flex-column">
+  <div class="p-2 bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 bg-primary">Flex item 3</div>
+</div>
+
+// oszlopba vissza
+<div class="d-flex flex-column-reverse">
+  <div class="p-2 bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 bg-primary">Flex item 3</div>
+</div>
+
+// elhelyezkedések
+<div class="d-flex justify-content-start">...</div>
+<div class="d-flex justify-content-end">...</div>
+<div class="d-flex justify-content-center">...</div>
+<div class="d-flex justify-content-between">...</div>
+<div class="d-flex justify-content-around">...</div>
+
+// kitöltik az egész teret
+<div class="d-flex">
+  <div class="p-2 bg-info flex-fill">Flex item 1</div>
+  <div class="p-2 bg-warning flex-fill">Flex item 2</div>
+  <div class="p-2 bg-primary flex-fill">Flex item 3</div>
+</div>
+
+// kitölti a maradék teret
+<div class="d-flex">
+  <div class="p-2 bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 bg-primary flex-grow-1">Flex item 3</div>
+</div>
+
+// order
+<div class="d-flex bg-secondary">
+  <div class="p-2 bg-info order-3">Flex item 1</div>
+  <div class="p-2 bg-warning order-2">Flex item 2</div>
+  <div class="p-2 bg-primary order-1">Flex item 3</div>
+</div>
+
+// teljesen jobbra
+<div class="d-flex bg-secondary">
+  <div class="p-2 ms-auto bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 bg-primary">Flex item 3</div>
+</div>
+
+// teljesen ballra
+<div class="d-flex bg-secondary">
+  <div class="p-2 bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 me-auto bg-primary">Flex item 3</div>
+</div>
+
+// sorba rakások
+<div class="d-flex flex-wrap">..</div>
+
+<div class="d-flex flex-wrap-reverse">..</div>
+
+<div class="d-flex flex-nowrap">..</div>
+
+// elrendezés, align
+<div class="d-flex flex-wrap align-content-start">..</div>
+
+<div class="d-flex flex-wrap align-content-end">..</div>
+
+<div class="d-flex flex-wrap align-content-center">..</div>
+
+<div class="d-flex flex-wrap align-content-around">..</div>
+
+<div class="d-flex flex-wrap align-content-stretch">..</div>
+
+// itemek elrendezése
+<div class="d-flex align-items-start">..</div>
+
+<div class="d-flex align-items-end">..</div>
+
+<div class="d-flex align-items-center">..</div>
+
+<div class="d-flex align-items-baseline">..</div>
+
+<div class="d-flex align-items-stretch">..</div>
+
+// egy item elrendezése
+<div class="d-flex bg-light" style="height:150px">
+  <div class="p-2 border">Flex item 1</div>
+  <div class="p-2 border align-self-start">Flex item 2</div>
+  <div class="p-2 border">Flex item 3</div>
+</div>
+
+// form
+// egy egész form
+<form action="/action_page.php">
+  <div class="mb-3 mt-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+  </div>
+  <div class="mb-3">
+    <label for="pwd" class="form-label">Password:</label>
+    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+  </div>
+  <div class="form-check mb-3">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="remember"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<label for="comment">Comments:</label>
+<textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+
+// 1 sorban lévő form
+<form>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Enter email" name="email">
+    </div>
+    <div class="col">
+      <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+    </div>
+  </div>
+</form>
+
+// változatok
+<input type="text" class="form-control" placeholder="Normal input">
+<input type="text" class="form-control" placeholder="Disabled input" disabled>
+<input type="text" class="form-control" placeholder="Readonly input" readonly>
+
+// színválasztó
+<input type="color" class="form-control form-control-color" value="#CCCCCC">
+
+// select menü
+<select class="form-select">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+</select>
+
+<select class="form-select form-select-lg">
+<select class="form-select">
+<select class="form-select form-select-sm">
+
+<select class="form-select" disabled>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+</select>
+
+// menő felbukkanó elemes
+<label for="browser" class="form-label">Choose your browser from the list:</label>
+<input class="form-control" list="browsers" name="browser" id="browser">
+<datalist id="browsers">
+  <option value="Edge">
+  <option value="Firefox">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+</datalist>
+
+// rádió gomb, pipás gomb check
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked>
+  <label class="form-check-label">Option 1</label>
+</div>
+
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Option 1
+  <label class="form-check-label" for="radio1"></label>
+</div>
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Option 2
+  <label class="form-check-label" for="radio2"></label>
+</div>
+<div class="form-check">
+  <input type="radio" class="form-check-input" disabled>Option 3
+  <label class="form-check-label"></label>
+</div>
+
+// switch
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked>
+  <label class="form-check-label" for="mySwitch">Dark Mode</label>
+</div>
+
+// range
+<label for="customRange" class="form-label">Custom range</label>
+<input type="range" class="form-range" id="customRange">
+
+<input type="range" class="form-range" step="10">
+
+<input type="range" class="form-range" min="0" max="4">
+
+// input groupok
+<form>
+  <div class="input-group">
+    <span class="input-group-text">@</span>
+    <input type="text" class="form-control" placeholder="Username">
+  </div>
+
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Your Email">
+    <span class="input-group-text">@example.com</span>
+  </div>
+</form>
+
+<!-- Multiple inputs -->
+<div class="input-group mb-3">
+  <span class="input-group-text">Person</span>
+  <input type="text" class="form-control" placeholder="First Name">
+  <input type="text" class="form-control" placeholder="Last Name">
+</div>
+
+<!-- Multiple addons / help text -->
+<div class="input-group mb-3">
+  <span class="input-group-text">One</span>
+  <span class="input-group-text">Two</span>
+  <span class="input-group-text">Three</span>
+  <input type="text" class="form-control">
+</div>
+
+// gombokkal együtt
+<div class="input-group mb-3">
+  <div class="input-group-text">
+    <input type="checkbox">
+  </div>
+  <input type="text" class="form-control" placeholder="Some text">
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-text">
+    <input type="radio">
+  </div>
+  <input type="text" class="form-control" placeholder="Some text">
+</div>
+
+// még több gombbal együtt
+<div class="input-group mb-3">
+  <button class="btn btn-outline-primary" type="button">Basic Button</button>
+  <input type="text" class="form-control" placeholder="Some text">
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search">
+  <button class="btn btn-success" type="submit">Go</button>
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Something clever..">
+  <button class="btn btn-primary" type="button">OK</button>
+  <button class="btn btn-danger" type="button">Cancel</button>
+</div>
+
+// dropdownnal együtt
+<div class="input-group mt-3 mb-3">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Link 1</a></li>
+    <li><a class="dropdown-item" href="#">Link 2</a></li>
+    <li><a class="dropdown-item" href="#">Link 3</a></li>
+  </ul>
+  <input type="text" class="form-control" placeholder="Username">
+</div>
+
+// label a formban
+<div class="form-floating mb-3 mt-3">
+  <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+  <label for="email">Email</label>
+</div>
+
+<div class="form-floating mt-3 mb-3">
+  <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+  <label for="pwd">Password</label>
+</div>
+
+<div class="form-floating">
+  <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
+  <label for="comment">Comments</label>
+</div>
+
+// selectben
+<div class="form-floating">
+  <select class="form-select" id="sel1" name="sellist">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+  </select>
+  <label for="sel1" class="form-label">Select list (select one):</label>
+</div>
+
+// validation
+<form action="/action_page.php" class="was-validated">
+  <div class="mb-3 mt-3">
+    <label for="uname" class="form-label">Username:</label>
+    <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>
+  <div class="mb-3">
+    <label for="pwd" class="form-label">Password:</label>
+    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>
+  <div class="form-check mb-3">
+    <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+    <label class="form-check-label" for="myCheck">I agree on blabla.</label>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Check this checkbox to continue.</div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+// grid oszlopok
+.col- (extra small devices - screen width less than 576px)
+.col-sm- (small devices - screen width equal to or greater than 576px)
+.col-md- (medium devices - screen width equal to or greater than 768px)
+.col-lg- (large devices - screen width equal to or greater than 992px)
+.col-xl- (xlarge devices - screen width equal to or greater than 1200px)
+.col-xxl- (xxlarge devices - screen width equal to or greater than 1400px)
+
+<!-- Two columns: 50% width on all screens, except for extra small (100% width) -->
+<div class="row">
+  <div class="col-sm">1 of 2</div>
+  <div class="col-sm">2 of 2</div>
+</div>
+
+<!-- Four columns: 25% width on all screens, except for extra small (100% width)-->
+<div class="row">
+  <div class="col-sm">1 of 4</div>
+  <div class="col-sm">2 of 4</div>
+  <div class="col-sm">3 of 4</div>
+  <div class="col-sm">4 of 4</div>
+</div>
+
+//
+// EGY EGÉSZ BOOTSRAP OLDAL
+//
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  </style>
+</head>
+<body>
+
+<div class="p-5 bg-primary text-white text-center">
+  <h1>My First Bootstrap 5 Page</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>About Me</h2>
+      <h5>Photo of me:</h5>
+      <div class="fakeimg">Fake Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <h3 class="mt-4">Some Links</h3>
+      <p>Lorem ipsum dolor sit ame.</p>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-8">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Dec 7, 2020</h5>
+      <div class="fakeimg">Fake Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+
+      <h2 class="mt-5">TITLE HEADING</h2>
+      <h5>Title description, Sep 2, 2020</h5>
+      <div class="fakeimg">Fake Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+</div>
+
+<div class="mt-5 p-4 bg-dark text-white text-center">
+  <p>Footer</p>
+</div>
+
+</body>
+</html>
