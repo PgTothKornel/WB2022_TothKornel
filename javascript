@@ -131,3 +131,19 @@ async function api() {
 
         rajz("usd", "huf");
     }
+
+// kutyás példa
+
+async function valtas() {
+            const call = await fetch("https://dogapi.dog/api/v2/breeds",{
+                method: "GET",
+                body: null,
+                headers: {
+                    "Content-Type" : "application/json",
+                    "Accept" : "application/json"
+                }
+            });
+            const szoveg = await call.json();
+
+            console.log(szoveg.data[0].attributes);
+        }
